@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Panel de Sustentabilidad - EcoTech</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; background-color: #f4f7f6; color: #333; }
+        .card { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin-bottom: 20px; }
+        h1 { color: #2c3e50; }
+        ul { list-style-type: square; }
+    </style>
+</head>
+<body>
+    <h1>Panel Administrativo de Sustentabilidad Industrial</h1>
+    
+    <div class="card">
+        <h2>Resumen Global de Emisiones</h2>
+        <p><strong>Emisiones Totales de Carbono:</strong> {{ total_emisiones }} kg CO₂</p>
+        <p><strong>Planta Industrial con Mayor Consumo:</strong> {{ planta_mayor_consumo }}</p>
+    </div>
+
+    <div class="card">
+        <h3>Historial de Consumo por Planta</h3>
+        <ul>
+            {% for reg in registros %}
+                <li><strong>{{ reg.planta }}:</strong> {{ reg.consumo }} kWh</li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
